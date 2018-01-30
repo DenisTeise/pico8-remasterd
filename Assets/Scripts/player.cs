@@ -12,23 +12,10 @@ public class player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        var x = Input.GetAxis("Horizontal") * Time.deltaTime * 8.0f;
-        var y = Input.GetAxis("Vertical") * Time.deltaTime * 8.0f;
-        var rotationz = transform.rotation.z;
+        var y = Input.GetAxis("Horizontal") * Time.deltaTime * 3.0f;
+        var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;
 
-        Debug.LogFormat("{0}", x);
 
-        transform.Translate(x, y, 0);
-        
-        if(x > 0 && rotationz == -45f)
-        {
-            transform.Rotate(0, 0, -3f);
-        }
-/*
-        if (x < 0 && rotationz < 45f)
-        {
-            transform.Rotate(0, 0, 45f);
-        }
-        */
+        transform.Translate(y, 0, z);
     }
 }
