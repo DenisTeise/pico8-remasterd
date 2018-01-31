@@ -4,7 +4,7 @@ using System.Collections;
 public class LookTowardMouse : MonoBehaviour
 {
 
-    private float x = 0; 
+    private float x = 0;
 
     // Update is called once per frame
     void Update()
@@ -23,15 +23,7 @@ public class LookTowardMouse : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
 
         Debug.LogFormat("{0}", angle);
-        /*
-        Cursor.visible = false;
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            x += 0.02f;
-        }
-            transform.Translate(0, x, 0);
-            */
+    
     }
 
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
