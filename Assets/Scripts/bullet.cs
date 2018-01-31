@@ -1,30 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+
 
 public class bullet : MonoBehaviour {
 
-    public Rigidbody2D Bullet;
-
-    public Transform player;
-
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Rigidbody2D clone;
-            clone = Instantiate(Bullet, player.transform.position, player.transform.rotation) as Rigidbody2D;
-            clone.velocity = transform.TransformDirection(Vector3.forward * 10);
 
-        }
-
-        transform.Translate(0, 0.1f, 0);
-        //
+        transform.Translate(0, 0.2f, 0);
+        
     }
 }
+
