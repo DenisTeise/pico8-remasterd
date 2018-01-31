@@ -19,12 +19,12 @@ public class bullet : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             Rigidbody2D clone;
-            clone = Instantiate(Bullet, new Vector3(10,10,0),Quaternion.identity) as Rigidbody2D;
+            clone = Instantiate(Bullet, player.transform.position, player.transform.rotation) as Rigidbody2D;
             clone.velocity = transform.TransformDirection(Vector3.forward * 10);
 
         }
 
         transform.Translate(0, 0.1f, 0);
-        //player.transform.position, player.transform.rotation
+        //
     }
 }

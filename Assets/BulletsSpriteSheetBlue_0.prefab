@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ca2a3a1b5c10e43ba34f0c199b2d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BulletsSpriteSheetBlue_0: {fileID: 50412724079437794}
+  Bullet: {fileID: 0}
   player: {fileID: 0}
 --- !u!212 &212098573585630846
 SpriteRenderer:
