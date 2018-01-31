@@ -1,0 +1,42 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class LookTowardMouse : MonoBehaviour
+{
+
+    private float x = 0; 
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        //Get the Screen positions of the object
+        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
+
+        //Get the Screen position of the mouse
+        Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
+
+        //Get the angle between the points
+        float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
+
+        //Ta Daaa
+        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+
+        Debug.LogFormat("{0}", angle);
+        /*
+        Cursor.visible = false;
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            x += 0.02f;
+        }
+            transform.Translate(0, x, 0);
+            */
+    }
+
+    float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
+    {
+        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+    }
+
+}
