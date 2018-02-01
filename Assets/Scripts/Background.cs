@@ -11,7 +11,7 @@ public class Background : MonoBehaviour {
 		
 	}
 
-    void OnTriggerExit(Collider collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Back")
         {
@@ -19,15 +19,6 @@ public class Background : MonoBehaviour {
             Debug.LogFormat("1");
         }
 
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Back")
-        {
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
-        }
     }
 
     // Update is called once per frame
