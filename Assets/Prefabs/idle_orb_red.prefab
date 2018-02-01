@@ -69,6 +69,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66ea4528b4fe6354db408a9f762d116d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  asteroidPrefab: {fileID: 1767380594427418}
+  range: 0
+  counter: 0
 --- !u!114 &114992989325342200
 MonoBehaviour:
   m_ObjectHideFlags: 1
