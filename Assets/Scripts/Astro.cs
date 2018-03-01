@@ -6,40 +6,37 @@ public class Astro : MonoBehaviour {
 
     public GameObject asteroidPrefab;
     GameObject mySpaceship;
-    Vector3 myVector3;
+    Vector2 myVector3;
     public int range;
     public int counter;
 
+    float time = 80;
+
 	// Use this for initialization
 	void Start () {
-        counter = 0;
+        
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(1))
-        {
-            spawnEnemies();
-        }
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag=="Shot")
+        time += 0.1F;
+
+        if (time>=100)
         {
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
+            time = 0;
+            spawnEnemies();
         }
     }
 
     void spawnEnemies()
     {
-        mySpaceship = GameObject.Find("idle_player_basic");
+        mySpaceship = GameObject.Find("idle_orb_green");
         if (mySpaceship != null)
         {
             for (int i = 0; i < counter; i++)
             {
-                myVector3 = Random.insideUnitCircle * range;
+                myVector3 = Random.insideUnitCircle * (Random.Range(50, 100.0f) )+ new Vector2(transform.position.x, transform.position.y);
                 Instantiate(asteroidPrefab, myVector3, Quaternion.identity);
             }
         }

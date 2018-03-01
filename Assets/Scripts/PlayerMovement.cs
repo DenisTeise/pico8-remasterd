@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour {
 
     private float x = 0.001f;
 
+    public GameObject player;
+
     public GameObject BulletsSpriteSheetBlue_0;
 
     // Use this for initialization
@@ -15,6 +17,8 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        player.transform.position = transform.position;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -28,20 +32,20 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetKey(KeyCode.UpArrow) && x < 0.1)
         {
 
-            x = 1.03f * x;
+            x = 1.1f * x;
 
         }
 
-        if (Input.GetKey(KeyCode.DownArrow) && x > 0.0001)
+        if (Input.GetKey(KeyCode.DownArrow) && x > 0.001)
         {
 
-            x = x / 1.01f;
+            x = x / 1.1f;
 
         }
-            Debug.LogFormat("{0}", x);
+           // Debug.LogFormat("{0}", x);
 
         transform.Translate(0, x, 0);
-        transform.Rotate(0, 0, -z);
+        transform.Rotate(0, 0, -z*2);
 
     }
 }
